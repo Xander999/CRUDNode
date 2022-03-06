@@ -51,7 +51,7 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     try{
-        const alien = await Alien.deleteOne(res.params.id);
+        const alien = await Alien.findOneAndDelete({_id : req.params.id});
         res.json(alien);
 
     }catch(err){
