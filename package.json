@@ -1,0 +1,30 @@
+{
+  "name": "crudnode",
+  "version": "1.0.0",
+  "description": "My own handson on this project.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xander999/CRUDNode.git"
+  },
+  "keywords": [
+    "nodeJS"
+  ],
+  "author": "Xander999",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xander999/CRUDNode/issues"
+  },
+  "homepage": "https://github.com/Xander999/CRUDNode#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
