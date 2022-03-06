@@ -13,6 +13,27 @@ router.get('/', async (req, res)=>{
     }
 })
 
+router.get('/:id', async (req, res)=>{
+    try{
+        const alien = await Alien.findById(req.params.id)
+        res.json(alien)
+    }catch(err){
+        res.send("Error ..."+err);
+    }
+})
+
+router.patch('/:id', async (req, res)=>{
+    try{
+        const alien = await Alien.findById(req.params.id);
+        alien.sub = req.body.sub;
+        const a1 = await alien.save();
+        res.json(a1);
+    }
+    catch(err){
+        res.send("Error..."+err);
+    }
+})
+
 router.post('/', async (req, res) => {
     const alien = new Alien({
         name: req.body.name,
@@ -24,8 +45,20 @@ router.post('/', async (req, res) => {
         const a1 = await alien.save()
         res.json(a1)
     }catch(err){
-        res.send('Error')
+        res.send('Error...'+err);
     }
 })
+
+router.delete('/:id', async (req, res) => {
+    try{
+        const alien = await Alien.deleteOne(res.params.id);
+        res.json(alien);
+
+    }catch(err){
+        res.send("Error ...."+err);
+    }
+})
+
+
 
 module.exports = router
